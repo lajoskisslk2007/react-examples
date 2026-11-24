@@ -7,7 +7,7 @@ function App() {
     const counter = useRef(0);
     const [other, setOther] = useState(0);
 
-    const costlyResult = React.useMemo(() => {
+    const costlyResult = useMemo(() => {
         for (let i = 0; i < 2_000_000_000; i++) {
             // Simulate a costly operation
         }
@@ -21,7 +21,7 @@ function App() {
             <p>
                 Selected: {selected}
                 <br />
-                Result: {costlyResult()}
+                Result: {costlyResult}
                 <br />
                 Other: {other}
                 <br />
