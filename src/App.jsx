@@ -7,14 +7,14 @@ function App() {
     const counter = useRef(0);
     const [other, setOther] = useState(0);
 
-    const costlyFunction = () => {
+    const costlyFunction = React.useMemo(() => {
         for (let i = 0; i < 2_000_000_000; i++) {
             // Simulate a costly operation
         }
         counter.current += 1;
 
         return selected * 2;
-    };
+    }, [selected]);
 
     return (
         <>
